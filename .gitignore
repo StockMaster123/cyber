@@ -1,0 +1,4 @@
+node_modules
+.env
+src2
+tsconfig.json

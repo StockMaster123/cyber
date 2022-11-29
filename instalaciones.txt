@@ -1,0 +1,21 @@
+
+npm i typescript -D
+npm i ts-node -D
+npm i nodemon -D
+npm run tsc --init // Se tiene que agregar el siguiente script en package.json     "tsc": "tsc",
+npm i express
+npm i cors // dependencia para definir que rutas o dominios tendrán acceso al api
+npm i dotenv // para variables de entorno
+npm i mongoose // para conectarse a la base de datos
+
+npm i @types/express @types/cors @types/dotenv @types/mongoose -D //typescrit
+
+npm i bcrypt // para incriptar contraseñas - npm i --save-dev @types/bcrypt
+
+npm install jsonwebtoken //libreria de jwt
+npm i --save-dev @types/jsonwebtoken // dev
+
+npm install --save multer --para gestionar subida de archivos
+npm i --save-dev @types/multer
+
+npm i //para instalar todas las dependencias
