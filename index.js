@@ -8,13 +8,12 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
 app.use(routes_1.router); //usar routes
-(0, mongo_1.default)()
-    .then((e) => console.log('conectado a base de datos'))
-    .catch((err) => console.warn(err));
+
+
 app.get('/', (req, res) => {
     res.send('Conexión establecida correctamente');
     res.end();
 });
-app.listen(200, () => {
+app.listen(PORT, () => {
     console.log(PORT);
 });
