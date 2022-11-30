@@ -44,6 +44,5 @@ app.get('/src', (req, res) => {
     res.send('Conexión establecida correctamente');
     res.end();
 });
-app.listen(200, () => {
-    console.log(PORT);
-});
+
+export.module = app;
