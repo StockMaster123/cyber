@@ -12,7 +12,6 @@ app.use(routes_1.router); //usar routes
 
 app.get('/', (req, res) => {
     res.send('Conexión establecida correctamente');
-    res.end();
 });
 app.listen(PORT, () => {
     console.log(PORT);
