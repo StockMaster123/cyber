@@ -40,9 +40,9 @@ app.use(routes_1.router); //usar routes
     .then((e) => console.log('conectado a base de datos'))
     .catch((err) => console.warn(err));
 app.use('/public', express_1.default.static(`${__dirname}/storage/img/product`));
-app.get('/src', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Conexión establecida correctamente');
     res.end();
 });
 
-export.default = app;
+module.exports = app
