@@ -45,4 +45,4 @@ app.get('/src', (req, res) => {
     res.end();
 });
 
-export.module = app;
+export.default = app;
