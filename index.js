@@ -1,4 +1,4 @@
-
+require("dotenv/config");
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = require("../src/routes");
