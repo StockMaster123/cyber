@@ -1,6 +1,5 @@
-const app = require('./src/app');
-const PORT = process.env.PORT || 200;
+const routerMain = require('./src/app');
 
-app.listen(PORT, ()=>{
-    console.log('');
-})
+const port = process.env.PORT || 200;
+
+routerMain.listen(port);
