@@ -29,7 +29,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const routes_1 = require("../src/routes");
+const routes_1 = require("../src/routes/index");
 const mongo_1 = __importDefault(require("./config/mongo"));
 const PORT = process.env.PORT || 200;
 const app = (0, express_1.default)();
