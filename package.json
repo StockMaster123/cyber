@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "tsc": "tsc /dist/index.js",
-    "start": "node ./src/index.js",
+    "start": "node index.js",
     "dev": "nodemon ./src2/app.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
