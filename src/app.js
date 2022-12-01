@@ -36,13 +36,12 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
 app.use(routes_1.router); //usar routes
-(0, mongo_1.default)()
-    .then((e) => console.log('conectado a base de datos'))
-    .catch((err) => console.warn(err));
+
 app.use('/public', express_1.default.static(`${__dirname}/storage/img/product`));
 app.get('/', (req, res) => {
-    res.send('Conexión establecida correctamente');
-    res.end();
+    (0, mongo_1.default)()
+    .then((e) => res.send('conectado a base de datos'))
+    .catch((err) => res.send('error'));
 });
 
 module.exports = app
