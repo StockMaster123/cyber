@@ -46,28 +46,28 @@ router.get('/:id', (req, res) => {
     })
         .catch(() => (0, error_1.errorHandle)('Error al encontrar el token', res));
 });
-router.post('/', ( req, res) => {
-    (0, user_1.postUser)(req.body, res)
-    postUser( req.body, res )
-        .then((user) =>{ 
 
-                if (  user != undefined ) {
-                        findUser(user.username)
-                        .then((usuarioFind) => {
-                                if ( usuarioFind != null){
-                                        getToken(usuarioFind)
-                                        const token =  getToken(user)
-                                        if ( token ) {
-                                         res.status(200).json({ token:token, rol: user.rol, username: user.username, email: user.email })
-                                        }
-                                        else errorHandle('Error al obtener usuario', res)
-                                        
-                                }
-                        })
+router.post('/', ({ body }, res) => {
+    (0, user_1.postUser)(body, res)
+        .then((user) => {
+        if (user != undefined) {
+            findUser(user.username)
+            .then((usuarioFind) => {
+                if ( usuarioFind != null){
+                    getToken(usuarioFind)
+                    const token =  getToken(user)
+                    if ( token ) {
+                     res.status(200).json({ token:token, rol: user.rol, username: user.username, email: user.email })
+                    }
+                    else errorHandle('Error al obtener usuario', res)
+                    
                 }
-                else ( errorHandle('Error al crear usuario', res))
-        })
-    .catch(() => (0, error_1.errorHandle)('Error al crear usuario', res));
+            })
+            .catch((err) => (0, error_1.errorHandle)('Error', res))
+        }
+        else
+            ((0, error_1.errorHandle)('Error al crear usuario', res));
+    });
 });
 
 router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
