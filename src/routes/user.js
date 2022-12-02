@@ -46,9 +46,9 @@ router.get('/:id', (req, res) => {
     })
         .catch(() => (0, error_1.errorHandle)('Error al encontrar el token', res));
 });
-router.post('/', ({ body }, res) => {
-    (0, user_1.postUser)(body, res)
-    postUser( body, res )
+router.post('/', ( req, res) => {
+    (0, user_1.postUser)(req.body, res)
+    postUser( req.body, res )
         .then((user) =>{ 
 
                 if (  user != undefined ) {
@@ -69,6 +69,7 @@ router.post('/', ({ body }, res) => {
         })
     .catch(() => (0, error_1.errorHandle)('Error al crear usuario', res));
 });
+
 router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const token = yield (0, verifyToken_1.verifyToken)(req);
     if (token != undefined) {
