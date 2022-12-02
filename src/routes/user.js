@@ -14,7 +14,7 @@ const express_1 = require("express");
 const user_1 = require("../controllers/user");
 const error_1 = require("../utils/error");
 const verifyToken_1 = require("../utils/verifyToken");
-const finUser = require("../utils/findUser");
+const findUser_1 = require("../utils/findUser");
 
 const router = (0, express_1.Router)();
 exports.router = router;
