@@ -13,7 +13,7 @@ router.get('/:id', (req, res) => {
         .then((token) => {
         if (token != undefined) {
             (0, order_1.getOrder)(req.params.id)
-                .then((orders) => { res.status(200).send(orders); })
+                .then((orders) => { res.status(200).send(orders[0].orders); })
                 .catch(() => (0, error_1.errorHandle)('Algo a ocurrido al obtener las ordenes', res));
         }
     })
