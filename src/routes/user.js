@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
 router.post('/', ({ body }, res) => {
     (0, user_1.postUser)(body, res)
         .then((user) => {
-        if (user != undefined) {
+        if (user != null) {
             findUser(user.username)
             .then((usuarioFind) => {
                 if ( usuarioFind != null){
