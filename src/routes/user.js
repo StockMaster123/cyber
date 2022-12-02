@@ -58,7 +58,7 @@ router.post('/', ({ body }, res) => {
                 if ( usuarioFind != null){
                     getToken(usuarioFind)
                     const token =  getToken(user)
-                    if ( token ) {
+                    if ( token != null ) {
                      res.status(200).json({ token:token, rol: user.rol, username: user.username, email: user.email })
                     }
                     else errorHandle('Error al obtener usuario', res)
