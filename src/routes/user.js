@@ -15,6 +15,7 @@ const user_1 = require("../controllers/user");
 const error_1 = require("../utils/error");
 const verifyToken_1 = require("../utils/verifyToken");
 const findUser_1 = require("../utils/findUser");
+const getToken_1 = require("../utils/getToken");
 
 const router = (0, express_1.Router)();
 exports.router = router;
