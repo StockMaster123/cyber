@@ -38,10 +38,9 @@ app.use((0, express_1.json)());
 app.use(routes_1.router); //usar routes
 
 app.use('/public', express_1.default.static(`${__dirname}/storage/img/product`));
-app.get('/', (req, res) => {
-    (0, mongo_1.default)()
-    .then((e) => res.send('conectado a base de datos'))
-    .catch((err) => res.send('error'));
-});
+
+(0, mongo_1.default)()
+    .then((e) => console.log('conectado a base de datos'))
+    .catch((err) => console.log('error al conectar en bd'));
 
 module.exports = app
