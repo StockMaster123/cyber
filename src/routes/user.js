@@ -53,7 +53,7 @@ router.post('/', ({ body }, res) => {
 
                 if (  user != undefined ) {
                         findUser(user.username)
-                        .then((usuarioFind:any) => {
+                        .then((usuarioFind) => {
                                 if ( usuarioFind != null){
                                         getToken(usuarioFind)
                                         const token =  getToken(user)
