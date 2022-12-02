@@ -50,26 +50,23 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', ({ body }, res) => {
-    (0, user_1.postUser)(body, res)
+    (0, findUser_1.findUser)(body.email)
+    .then((u) => {
+        if ( u == null ){
+        (0, user_1.postUser)(body, res)
         .then((user) => {
-        if (user != null) {
-            findUser(user.username)
-            .then((usuarioFind) => {
-                if ( usuarioFind != null){
-                    getToken(usuarioFind)
-                    const token =  getToken(user)
-                    if ( token != null ) {
-                     res.status(200).json({ token:token, rol: user.rol, username: user.username, email: user.email })
+            if (user != undefined) {
+                const token = (0, getToken_1.getToken)(user);
+                    if (token) {
+                        res.status(200).json({ token: token, rol: user.rol, username: user.username, email: user.email });
                     }
-                    else errorHandle('Error al obtener usuario', res)
-                    
-                }
-            })
-            .catch((err) => (0, error_1.errorHandle)('Error', res))
+                    else ((0, error_1.errorHandle)('Error al obtener el token', res));
+            }
+            else((0, error_1.errorHandle)('Error', res));
+        })
         }
-        else
-            ((0, error_1.errorHandle)('Error al crear usuario', res));
-    });
+        else((0, error_1.errorHandle)('Error este usuario ya existe', res));
+    })        
 });
 
 router.delete('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
