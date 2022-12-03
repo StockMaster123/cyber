@@ -30,7 +30,7 @@ const storage = (0, multer_1.diskStorage)({
         e(null, 'src/storage/img/product'); // directorio en donde se guardará las imagenes
     },
     filename: (req, file, e) => {
-        e(null, `${Date.now()}-${file.originalname}`);
+        e(null, file.originalname);
     }
 });
 const upload = (0, multer_1.default)({ storage });
