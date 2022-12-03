@@ -25,7 +25,7 @@ const getProduct = (productName) => __awaiter(void 0, void 0, void 0, function* 
 });
 exports.getProduct = getProduct;
 const postProduct = (body, { files }) => __awaiter(void 0, void 0, void 0, function* () {
-    const { category, productName, price, provider, stock } = body;
+    const { category, productName, price, provider, stock, description } = body;
     const filesArray = files;
     const imgs = [];
     filesArray.map((img) => {
