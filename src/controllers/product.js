@@ -31,7 +31,7 @@ const postProduct = (body, { files }) => __awaiter(void 0, void 0, void 0, funct
     filesArray.map((img) => {
         imgs.push(img.filename);
     });
-    const newProduct = yield product_1.default.create({ category, productName, price, provider, stock, imgs });
+    const newProduct = yield product_1.default.create({ category, productName, price, provider, stock, imgs, description });
     return newProduct;
 });
 exports.postProduct = postProduct;
