@@ -8,7 +8,7 @@ const ProductSchema = new mongoose_1.Schema({
     price: Number,
     category: String,
     imgs: Array,
-    description : String
+    description: String
 }, { versionKey: false });
 const productModel = (0, mongoose_1.model)('Product', ProductSchema);
 exports.default = productModel;
