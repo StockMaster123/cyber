@@ -39,7 +39,7 @@ app.use(routes_1.router); //usar routes
 
 app.use('/public', express_1.default.static(`${__dirname}/storage/img/product`));
 
-app.get('/', (req, res) => {
+app.get('/cyber', (req, res) => {
     (0, mongo_1.default)()
     .then((e) => res.send('conectado a base de datos'))
     .catch((err) => res.send('error al conectar en bd'));
