@@ -31,7 +31,7 @@ const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const routes_1 = require("../src/routes");
 const mongo_1 = __importDefault(require("./config/mongo"));
-const PORT = process.env.PORT || 200;
+const PORT = process.env.PORT || 443;
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use((0, express_1.json)());
